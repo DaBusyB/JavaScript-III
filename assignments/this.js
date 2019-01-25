@@ -56,18 +56,21 @@ const child = {
 
 const skills = ['cooking', ' programming', ' comedy'];
 const pets = ['ferret', 'pigeon', 'rabbit'];
-     //using call
+
+//using call
 function facts1(skills) {
-    console.log("Principle 4 call:", `Hello, my name is ${this.name}. I like: ${skills}.`);
+    console.log("Principle 4a call:", `Hello, my name is ${this.name}. I like: ${skills}.`);
 };
 
 facts1.call(child, skills);
 
 
-     //using apply
-function facts2(pet1,pet2, pet3) {
+//using apply
+//using call with spread operator
+function facts2(pet1, pet2, pet3) {
    
-    console.log("Principle 4 apply:", `Hello, my name is ${this.name}. I have a: ${pet1}, ${pet2}, and ${pet3}.`);
+    console.log("Principle 4b apply and call with spread:", `Hello, my name is ${this.name}. I have a: ${pet1}, ${pet2}, and ${pet3}.`);
 };
 
 facts2.apply(child, pets);
+facts2.call(child, ...pets);
